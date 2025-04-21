@@ -63,6 +63,7 @@ To automate the entire lifecycle of a Python microservice deployment — from wr
 ```bash
 git clone https://github.com/your-username/devops-python-cicd-pipeline.git
 cd devops-python-cicd-pipeline
+```
 
 📊 Monitoring & Alerts
 Logs: View in CloudWatch Log Groups
