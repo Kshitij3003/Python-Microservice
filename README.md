@@ -66,6 +66,7 @@ cd devops-python-cicd-pipeline
 ```
 
 📊 Monitoring & Alerts
+
 Logs: View in CloudWatch Log Groups
 
 Health: Run scripts/health_check.sh
