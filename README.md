@@ -87,6 +87,7 @@ ansible-playbook playbook.yml -i inventory
 ```bash
 Push changes to main branch and GitHub Actions will do the magic 🎩
 ```
+---
 
 ## 📊 Monitoring & Alerts
 
@@ -96,15 +97,17 @@ Health: Run scripts/health_check.sh
 
 Optional: Add Slack/MS Teams alert via webhook in notify.sh
 
+---
+
 ## ✍️ Blog Post
 Coming soon: “Building an End-to-End DevOps Pipeline with GitHub Actions & AWS”
 Stay tuned!
 
+---
+
 ## 🤝 Author
 Kshitij Tripathi – DevOps Engineer | GCP ACE | GCP PCA | AZ-900 | Cloud Ninja 🧠
 LinkedIn
-
-
 
 ---
 
