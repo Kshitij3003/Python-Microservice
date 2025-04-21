@@ -65,7 +65,30 @@ git clone https://github.com/your-username/devops-python-cicd-pipeline.git
 cd devops-python-cicd-pipeline
 ```
 
-📊 Monitoring & Alerts
+### 2. Setup AWS Credentials
+```bash
+aws configure
+```
+
+### 3. Provision Infra
+```bash
+cd infra/terraform
+terraform init
+terraform apply
+```
+
+### 4. Configure EC2
+```bash
+cd ../ansible
+ansible-playbook playbook.yml -i inventory
+```
+
+### 5. Trigger CI/CD
+```bash
+Push changes to main branch and GitHub Actions will do the magic 🎩
+```
+
+## 📊 Monitoring & Alerts
 
 Logs: View in CloudWatch Log Groups
 
@@ -73,11 +96,11 @@ Health: Run scripts/health_check.sh
 
 Optional: Add Slack/MS Teams alert via webhook in notify.sh
 
-✍️ Blog Post
+## ✍️ Blog Post
 Coming soon: “Building an End-to-End DevOps Pipeline with GitHub Actions & AWS”
 Stay tuned!
 
-🤝 Author
+## 🤝 Author
 Kshitij Tripathi – DevOps Engineer | GCP ACE | GCP PCA | AZ-900 | Cloud Ninja 🧠
 LinkedIn
 
