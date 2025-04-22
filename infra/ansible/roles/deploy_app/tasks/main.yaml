@@ -1,0 +1,29 @@
+---
+- name: Install required packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker
+    - git
+
+- name: Start Docker
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Create Docker login script
+  template:
+    src: docker-login.sh.j2
+    dest: /home/ec2-user/docker-login.sh
+    mode: '0755'
+
+- name: Login to AWS ECR
+  command: bash /home/ec2-user/docker-login.sh
+
+- name: Pull Docker image from ECR
+  command: docker pull {{ ecr_url }}
+
+- name: Run Docker container
+  command: docker run -d -p 8000:8000 {{ ecr_url }}

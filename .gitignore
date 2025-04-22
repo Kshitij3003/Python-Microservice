@@ -6,6 +6,22 @@ __pycache__/
 # CSV files
 *.csv
 
+# PEM files
+*.pem
+
+# Exclude sonarQube files
+Sonarqube/
+sonar-scanner-cli/
+sonar-scanner*
+
+#Excludinf VSCode files
+.vscode/*
+
+#Exclude terraform files
+*.hcl
+*.exe
+LICENSE.txt
+
 # C extensions
 *.so
 
