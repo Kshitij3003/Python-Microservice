@@ -34,13 +34,13 @@ jobs:
             # Generate coverage report in human-readable format
             # coverage report
             coverage xml
-            coverage2clover -i coverage.xml -o cobertura.xml
+            # coverage2clover -i coverage.xml -o cobertura.xml
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: cobertura.xml
+          path: coverage.xml
 
       - name: Run Security Analysis with Bandit
         run: |
@@ -63,16 +63,16 @@ jobs:
         with:
           name: coverage-report
       
-      - name: Fix cobertura paths (optional)
-        run: |
-          sed -i 's|filename="app/|filename="./app/|g' cobertura.xml
-          sed -i 's|filename="tests/|filename="./tests/|g' cobertura.xml
+      # - name: Fix cobertura paths (optional)
+      #   run: |
+      #     sed -i 's|filename="app/|filename="./app/|g' cobertura.xml
+      #     sed -i 's|filename="tests/|filename="./tests/|g' cobertura.xml
 
 
       - name: Checking coverage report
         run: |
           ls -lah
-          cat cobertura.xml
+          cat coverage.xml
       
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
