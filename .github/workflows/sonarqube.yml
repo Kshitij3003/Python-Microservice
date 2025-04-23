@@ -66,6 +66,7 @@ jobs:
       - name: Checking coverage report
         run: |
           ls -lah
+          cat cobertura.xml
       
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
