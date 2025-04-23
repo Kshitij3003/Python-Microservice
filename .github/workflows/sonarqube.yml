@@ -29,12 +29,18 @@ jobs:
         run: |
             # Run tests and generate coverage report
             # coverage run --source=app -m unittest discover -s tests -p "test*.py"
-            coverage run -m pytest
+            coverage run --source=. -m pytest
             ls -la .coverage
             # Generate coverage report in human-readable format
             # coverage report
             coverage xml
             coverage2clover -i coverage.xml -o cobertura.xml
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
 
       - name: Run Security Analysis with Bandit
         run: |
@@ -51,6 +57,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - name: Download coverage report
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-report
       
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
