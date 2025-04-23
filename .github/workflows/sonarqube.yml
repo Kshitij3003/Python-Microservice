@@ -67,3 +67,16 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+        args: >
+          -Dsonar.projectKey=python-microservice
+          -Dsonar.sources=app
+          -Dsonar.python.coverage.reportPaths=cobertura.xml
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.python.bandit.reportPaths=bandit-report.json
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.inclusions=**/*.py
+          -Dsonar.projectVersion=3.13.1
+          -Dsonar.projectName=python-microservice
+          -Dsonar.projectKey=Kshitij3003_Python-Microservice
+          -Dsonar.organization=python-microservice
