@@ -62,6 +62,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: coverage-report
+
+      - name: Checking coverage report
+        run: |
+          ls -lah
       
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
