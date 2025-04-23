@@ -28,14 +28,15 @@ jobs:
       - name: Run tests and collect coverage
         run: |
             # Run tests and generate coverage report
-            # coverage run --source=app -m unittest discover -s tests -p "test*.py"
-            # ls -la .coverage
+            coverage run --source=app -m unittest discover -s tests -p "test*.py"
+            ls -la .coverage
             # Generate coverage report in human-readable format
-            # coverage report
+            coverage report
+            coverage xml
             # Generate coverage report in lcov format
-            coverage lcov -o coverage.lcov
+            # coverage lcov -o coverage.lcov
             # List the generated lcov file
-            ls -la coverage.lcov
+            # ls -la coverage.lcov
 
   sonarqube:
     name: SonarQube
