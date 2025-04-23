@@ -38,6 +38,13 @@ jobs:
             # List the generated lcov file
             # ls -la coverage.lcov
 
+      - name: Run Security Analysis with Bandit
+        run: |
+            # Run Bandit security analysis
+            bandit -r app -f json -o bandit_report.json
+            # List the generated Bandit report
+            ls -la bandit_report.json
+
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
