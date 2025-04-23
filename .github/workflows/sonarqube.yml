@@ -34,6 +34,7 @@ jobs:
             # Generate coverage report in human-readable format
             # coverage report
             coverage xml
+            coverage2clover -i coverage.xml -o cobertura.xml
 
       - name: Run Security Analysis with Bandit
         run: |
