@@ -14,6 +14,7 @@ Sonarqube/
 sonar-scanner-cli/
 sonar-scanner*
 *.lcov
+*.zip
 
 #Excludinf VSCode files
 .vscode/*
