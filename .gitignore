@@ -13,6 +13,7 @@ __pycache__/
 Sonarqube/
 sonar-scanner-cli/
 sonar-scanner*
+*.lcov
 
 #Excludinf VSCode files
 .vscode/*
