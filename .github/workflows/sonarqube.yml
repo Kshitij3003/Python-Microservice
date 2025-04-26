@@ -33,7 +33,7 @@ jobs:
             ls -la .coverage
             # Generate coverage report in human-readable format
             # coverage report
-            coverage xml --relative
+            coverage xml
             # coverage2clover -i coverage.xml -o cobertura.xml
 
       - name: Upload coverage report
