@@ -1,0 +1,23 @@
+name: Semgrep Static Code Analysis
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    types: [ "opened", "synchronize", "reopened" ]
+    branches: [ "main" ]
+
+jobs:
+  semgrep:
+    name: Run Semgrep Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep scan
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: p/default  # Use Semgrep's built-in recommended rules
+          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
