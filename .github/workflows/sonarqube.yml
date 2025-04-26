@@ -1,4 +1,5 @@
-name: Build
+name: Sonarqube Scan
+# This workflow runs SonarQube analysis on the codebase and uploads the coverage report.
 on:
   push:
     branches:

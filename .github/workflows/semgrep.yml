@@ -19,5 +19,4 @@ jobs:
       - name: Run Semgrep scan
         uses: returntocorp/semgrep-action@v1
         with:
-          config: p/default  # Use Semgrep's built-in recommended rules
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
