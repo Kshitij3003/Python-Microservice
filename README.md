@@ -27,7 +27,7 @@ To automate the entire lifecycle of a Python microservice deployment — from wr
 | **Application**      | Python REST API (Flask/FastAPI)                     |
 | **Containerization** | Docker + AWS ECR                                    |
 | **Deployment**       | EC2 (cost-effective, or ECS for scalable option)    |
-| **Code Quality**     | SonarQube + FOSSA + Checkmarx                       |
+| **Code Quality**     | SonarQube + FOSSA + Semgrep                         |
 | **Monitoring**       | AWS CloudWatch + APM + Custom Shell-based checks    |
 
 ---
@@ -42,7 +42,7 @@ To automate the entire lifecycle of a Python microservice deployment — from wr
    - Build Docker image and push to **ECR**
    - Run **SonarQube** for code quality
    - Run **FOSSA** for license check
-   - Run **Checkmarx** for security scan
+   - Run **Semgrep** for security scan
 
 3. **CD Workflow:**
    - Provision AWS resources (VPC, EC2, ECR, Security Groups) using **Terraform**
@@ -96,6 +96,22 @@ Logs: View in CloudWatch Log Groups
 Health: Run scripts/health_check.sh
 
 Optional: Add Slack/MS Teams alert via webhook in notify.sh
+
+---
+
+# Python Microservice
+
+[![Sonar Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=Kshitij3003_Python-Microservice&metric=alert_status)](https://sonarcloud.io/summary/overall?id=Kshitij3003_Python-Microservice)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKshitij3003%2FPython-Microservice.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKshitij3003%2FPython-Microservice?ref=badge_shield)
+[![Semgrep Status](https://semgrep.dev/api/repos/github.com/Kshitij3003/Python-Microservice/badge.svg)](https://semgrep.dev/orgs/Kshitij3003/projects)
+
+---
+
+## 🛡️ Quality Gates and Security Scanning
+
+- **SonarCloud** → Static Code Analysis, Code Smells, Vulnerabilities, Bugs.
+- **FOSSA** → License Compliance and Open Source Dependency Management.
+- **Semgrep Cloud** → Static Application Security Testing (SAST) for vulnerabilities.
 
 ---
 
