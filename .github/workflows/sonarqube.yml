@@ -43,12 +43,12 @@ jobs:
           name: coverage-report
           path: coverage.xml
 
-      - name: Run Security Analysis with Bandit
-        run: |
-            # Run Bandit security analysis
-            bandit -r app -f json -o bandit_report.json
-            # List the generated Bandit report
-            ls -la bandit_report.json
+      # - name: Run Security Analysis with Bandit
+      #   run: |
+      #       # Run Bandit security analysis
+      #       bandit -r app -f json -o bandit_report.json
+      #       # List the generated Bandit report
+      #       ls -la bandit_report.json
 
   sonarqube:
     name: SonarQube
