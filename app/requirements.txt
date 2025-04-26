@@ -3,5 +3,4 @@ uvicorn
 httpx
 coverage
 pytest
-bandit
 coverage2clover
