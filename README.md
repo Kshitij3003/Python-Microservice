@@ -103,7 +103,6 @@ Optional: Add Slack/MS Teams alert via webhook in notify.sh
 
 [![Sonar Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=Kshitij3003_Python-Microservice&metric=alert_status)](https://sonarcloud.io/summary/overall?id=Kshitij3003_Python-Microservice)
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B53521%2Fgithub.com%2FKshitij3003%2FPython-Microservice.svg?type=small)](https://app.fossa.com/projects/custom%2B53521%2Fgithub.com%2FKshitij3003%2FPython-Microservice?ref=badge_small)
-[![Semgrep Status](https://semgrep.dev/api/repos/github.com/Kshitij3003/Python-Microservice/badge.svg)](https://semgrep.dev/orgs/Kshitij3003/projects)
 
 ---
 
