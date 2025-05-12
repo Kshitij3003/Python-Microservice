@@ -1,7 +1,7 @@
 # 🚀 End-to-End Automated CI/CD Pipeline for a Python Microservice
 
 A production-grade, full-lifecycle DevOps project that demonstrates infrastructure provisioning, containerization, CI/CD, code quality analysis, and monitoring — all automated and built using modern DevOps tools on AWS.
-
+ 
 ---
 
 ## 📌 Objective
