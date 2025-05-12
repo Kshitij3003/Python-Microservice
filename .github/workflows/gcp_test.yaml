@@ -1,0 +1,28 @@
+# .github/workflows/auth-to-gcp.yml
+name: Test GCP OIDC
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  auth-gcp:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          token_format: 'access_token'
+          workload_identity_provider: 'projects/914342142012/locations/global/workloadIdentityPools/gha-pool/providers/gha-provider'
+          service_account: 'gha-oidc-sa@devops-project-458912.iam.gserviceaccount.com'
+
+      - name: List GCS Buckets
+        run: gcloud storage buckets list
