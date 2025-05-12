@@ -13,6 +13,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip #This is where pip stores downloaded wheels and packages.
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }} #A new cache is created only if requirements.txt changes.
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: pip install -r app/requirements.txt
 
